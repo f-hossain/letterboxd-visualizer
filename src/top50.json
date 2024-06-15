@@ -1,0 +1,706 @@
+{
+    "children": [
+        {
+            "name": "action",
+            "children": [
+                {
+                    "rank": 4,
+                    "year": 1954,
+                    "title": "Seven Samurai",
+                    "director": "Akira Kurosawa",
+                    "genre": "Action",
+                    "language": "Japanese",
+                    "runtime": 207,
+                    "rating": 4.6,
+                    "likes": 141662,
+                    "fans": 9738,
+                    "watches": 365258
+                },
+                {
+                    "rank": 23,
+                    "year": 2008,
+                    "title": "The Dark Knight",
+                    "director": "Christopher Nolan",
+                    "genre": "Action",
+                    "language": "English",
+                    "runtime": 152,
+                    "rating": 4.47,
+                    "likes": 1575349,
+                    "fans": 83420,
+                    "watches": 3507296
+                },
+                {
+                    "rank": 29,
+                    "year": 2023,
+                    "title": "Spider-Man: Across the Spider-Verse",
+                    "director": "Joaquim Dos Santos, Justin K. Thompson, Kemp Powers",
+                    "genre": "Action",
+                    "language": "English",
+                    "runtime": 140,
+                    "rating": 4.45,
+                    "likes": 1138929,
+                    "fans": 51606,
+                    "watches": 2246827
+                },
+                {
+                    "rank": 43,
+                    "year": 2018,
+                    "title": "Spider-Man: Into the Spider-Verse",
+                    "director": "Rodney Rothman, Peter Ramsey, Bob Persichetti",
+                    "genre": "Action",
+                    "language": "English",
+                    "runtime": 117,
+                    "rating": 4.42,
+                    "likes": 1779340,
+                    "fans": 76080,
+                    "watches": 3460083
+                }
+            ]
+        },
+        { 
+            "name": "crime",
+            "children": [
+                {
+                    "rank": 5,
+                    "year": 1974,
+                    "title": "The Godfather: Part II",
+                    "director": "Francis Ford Coppola",
+                    "genre": "Crime",
+                    "language": "English",
+                    "runtime": 202,
+                    "rating": 4.59,
+                    "likes": 402062,
+                    "fans": 25746,
+                    "watches": 1109778
+                },
+                {
+                    "rank": 6,
+                    "year": 1963,
+                    "title": "High and Low",
+                    "director": "Akira Kurosawa",
+                    "genre": "Crime",
+                    "language": "Japanese",
+                    "runtime": 142,
+                    "rating": 4.59,
+                    "likes": 51255,
+                    "fans": 3121,
+                    "watches": 119628
+                },
+                {
+                    "rank": 9,
+                    "year": 1972,
+                    "title": "The Godfather",
+                    "director": "Francis Ford Coppola",
+                    "genre": "Crime",
+                    "language": "English",
+                    "runtime": 175,
+                    "rating": 4.55,
+                    "likes": 817109,
+                    "fans": 63282,
+                    "watches": 2045761
+                },
+                {
+                    "rank": 10,
+                    "year": 1994,
+                    "title": "The Shawshank Redemption",
+                    "director": "Frank Darabont",
+                    "genre": "Crime",
+                    "language": "English",
+                    "runtime": 142,
+                    "rating": 4.55,
+                    "likes": 806177,
+                    "fans": 65663,
+                    "watches": 2076097
+                },
+                {
+                    "rank": 12,
+                    "year": 2002,
+                    "title": "City of God",
+                    "director": "Fernando Meirelles",
+                    "genre": "Crime",
+                    "language": "Portuguese",
+                    "runtime": 130,
+                    "rating": 4.53,
+                    "likes": 300252,
+                    "fans": 31911,
+                    "watches": 761053
+                },
+                {
+                    "rank": 21,
+                    "year": 1990,
+                    "title": "GoodFellas",
+                    "director": "Martin Scorsese",
+                    "genre": "Crime",
+                    "language": "English",
+                    "runtime": 145,
+                    "rating": 4.48,
+                    "likes": 634350,
+                    "fans": 56409,
+                    "watches": 1596778
+                },
+                {
+                    "rank": 45,
+                    "year": 1990,
+                    "title": "Close-Up",
+                    "director": "Abbas Kiarostami",
+                    "genre": "Crime",
+                    "language": "Persian",
+                    "runtime": 98,
+                    "rating": 4.42,
+                    "likes": 47640,
+                    "fans": 3778,
+                    "watches": 115045
+                },
+                {
+                    "rank": 48,
+                    "year": 2003,
+                    "title": "Memories of Murder",
+                    "director": "Bong Joon-Ho",
+                    "genre": "Crime",
+                    "language": "Korean",
+                    "runtime": 131,
+                    "rating": 4.41,
+                    "likes": 546849,
+                    "fans": 17494,
+                    "watches": 213830
+                }
+            ]
+        },
+        { 
+            "name": "drama",
+            "children": [
+              {
+                "rank": 3,
+                "year": 1957,
+                "title": "12 Angry Men",
+                "director": "Sidney Lumet",
+                "genre": "Drama",
+                "language": "English",
+                "runtime": 97,
+                "rating": 4.62,
+                "likes": 371182,
+                "fans": 32310,
+                "watches": 941374
+              },
+              {
+                "rank": 11,
+                "year": 2000,
+                "title": "Yi Yi",
+                "director": "Edward Yang",
+                "genre": "Drama",
+                "language": "Chinese",
+                "runtime": 174,
+                "rating": 4.54,
+                "likes": 51667,
+                "fans": 7254,
+                "watches": 116931
+              },
+              {
+                "rank": 14,
+                "year": 1952,
+                "title": "Ikiru",
+                "director": "Akira Kurosawa",
+                "genre": "Drama",
+                "language": "Japanese",
+                "runtime": 143,
+                "rating": 4.52,
+                "likes": 58095,
+                "fans": 5179,
+                "watches": 140781
+              },
+              {
+                "rank": 15,
+                "year": 1995,
+                "title": "La Haine",
+                "director": "Mathieu Kassovitz",
+                "genre": "Drama",
+                "language": "French",
+                "runtime": 98,
+                "rating": 4.51,
+                "likes": 261824,
+                "fans": 40709,
+                "watches": 602415
+              },
+              {
+                "rank": 25,
+                "year": 2007,
+                "title": "There Will Be Blood",
+                "director": "Paul Thomas Anderson",
+                "genre": "Drama",
+                "language": "English",
+                "runtime": 158,
+                "rating": 4.45,
+                "likes": 373041,
+                "fans": 29473,
+                "watches": 990496
+              },
+              {
+                "rank": 26,
+                "year": 1978,
+                "title": "Autumn Sonata",
+                "director": "Ingmar Bergman",
+                "genre": "Drama",
+                "language": "Swedish",
+                "runtime": 93,
+                "rating": 4.45,
+                "likes": 41637,
+                "fans": 3091,
+                "watches": 102987
+              },
+              {
+                "rank": 35,
+                "year": 1950,
+                "title": "Sunset Boulevard",
+                "director": "Billy Wilder",
+                "genre": "Drama",
+                "language": "English",
+                "runtime": 110,
+                "rating": 4.44,
+                "likes": 113006,
+                "fans": 5371,
+                "watches": 312817
+              },
+              {
+                "rank": 36,
+                "year": 1953,
+                "title": "Tokyo Story",
+                "director": "Yasujiro Ozu",
+                "genre": "Drama",
+                "language": "Japanese",
+                "runtime": 137,
+                "rating": 4.43,
+                "likes": 50281,
+                "fans": 2973,
+                "watches": 142460
+              },
+              {
+                "rank": 41,
+                "year": 2014,
+                "title": "Whiplash",
+                "director": "Damien Chazelle",
+                "genre": "Drama",
+                "language": "English",
+                "runtime": 107,
+                "rating": 4.43,
+                "likes": 1391490,
+                "fans": 111206,
+                "watches": 2936046
+              },
+              {
+                "rank": 44,
+                "year": 1985,
+                "title": "Mishima: A Life in Four Chapters",
+                "director": "Paul Schrader",
+                "genre": "Drama",
+                "language": "Japanese",
+                "runtime": 121,
+                "rating": 4.42,
+                "likes": 36448,
+                "fans": 3288,
+                "watches": 85740
+              },
+              {
+                "rank": 49,
+                "year": 1966,
+                "title": "Persona",
+                "director": "Ingmar Bergman",
+                "genre": "Drama",
+                "language": "Swedish",
+                "runtime": 83,
+                "rating": 4.41,
+                "likes": 139559,
+                "fans": 13835,
+                "watches": 369343
+              }
+            ]
+        },
+        { 
+            "name": "fantasy",
+            "children": [
+              {
+                "rank": 16,
+                "year": 2003,
+                "title": "The Lord of the Rings: The Return of the King",
+                "director": "Peter Jackson",
+                "genre": "Fantasy",
+                "language": "English",
+                "runtime": 201,
+                "rating": 4.5,
+                "likes": 669856,
+                "fans": 51823,
+                "watches": 1941515
+              },
+              {
+                "rank": 27,
+                "year": 2001,
+                "title": "Spirited Away",
+                "director": "Hayao Miyazaki",
+                "genre": "Fantasy",
+                "language": "Japanese",
+                "runtime": 125,
+                "rating": 4.45,
+                "likes": 1308697,
+                "fans": 77427,
+                "watches": 2779440
+              },
+              {
+                "rank": 46,
+                "year": 1982,
+                "title": "Fanny and Alexander",
+                "director": "Ingmar Bergman",
+                "genre": "Fantasy",
+                "language": "Swedish",
+                "runtime": 188,
+                "rating": 4.41,
+                "likes": 24291,
+                "fans": 1526,
+                "watches": 76359
+              }
+            ]
+        },
+        { 
+            "name": "history",
+            "children": [
+              {
+                "rank": 1,
+                "year": 1962,
+                "title": "Harakiri",
+                "director": "Masaki Kobayashi",
+                "genre": "History",
+                "language": "Japanese",
+                "runtime": 135,
+                "rating": 4.69,
+                "likes": 63492,
+                "fans": 5679,
+                "watches": 140643
+              },
+              {
+                "rank": 17,
+                "year": 1985,
+                "title": "Ran",
+                "director": "Akira Kurosawa",
+                "genre": "History",
+                "language": "Japanese",
+                "runtime": 160,
+                "rating": 4.5,
+                "likes": 67430,
+                "fans": 4422,
+                "watches": 179020
+              },
+              {
+                "rank": 39,
+                "year": 1928,
+                "title": "The Passion of Joan of Arc",
+                "director": "Carl Theodor Dreyer",
+                "genre": "History",
+                "language": "French",
+                "runtime": 82,
+                "rating": 4.43,
+                "likes": 45120,
+                "fans": 2165,
+                "watches": 130508
+              },
+              {
+                "rank": 40,
+                "year": 1966,
+                "title": "Andrei Rublev",
+                "director": "Andrei Tarkovsky",
+                "genre": "History",
+                "language": "Russian",
+                "runtime": 183,
+                "rating": 4.43,
+                "likes": 32017,
+                "fans": 2983,
+                "watches": 91584
+              }
+            ]
+        },
+        { 
+            "name": "romance",
+            "children": [
+              {
+                "rank": 18,
+                "year": 1991,
+                "title": "A Brighter Summer Day",
+                "director": "Edward Yang",
+                "genre": "Romance",
+                "language": "Chinese",
+                "runtime": 237,
+                "rating": 4.5,
+                "likes": 29699,
+                "fans": 3581,
+                "watches": 69060
+              },
+              {
+                "rank": 30,
+                "year": 1988,
+                "title": "Cinema Paradiso",
+                "director": "Giuseppe Tornatore",
+                "genre": "Romance",
+                "language": "Italian",
+                "runtime": 124,
+                "rating": 4.45,
+                "likes": 151267,
+                "fans": 21092,
+                "watches": 368423
+              },
+              {
+                "rank": 37,
+                "year": 1960,
+                "title": "The Apartment",
+                "director": "Billy Wilder",
+                "genre": "Romance",
+                "language": "English",
+                "runtime": 125,
+                "rating": 4.43,
+                "likes": 102355,
+                "fans": 7595,
+                "watches": 269571
+              },
+              {
+                "rank": 38,
+                "year": 2019,
+                "title": "Portrait of a Lady on Fire",
+                "director": "Céline Sciamma",
+                "genre": "Romance",
+                "language": "French",
+                "runtime": 120,
+                "rating": 4.43,
+                "likes": 396944,
+                "fans": 49101,
+                "watches": 838168
+              }
+            ]
+        },
+        { 
+            "name": "science fiction",
+            "children": [
+              {
+                "rank": 22,
+                "year": 2024,
+                "title": "Dune: Part Two",
+                "director": "Dennis Villeneuve",
+                "genre": "Science Fiction",
+                "language": "English",
+                "runtime": 167,
+                "rating": 4.47,
+                "likes": 820949,
+                "fans": 49546,
+                "watches": 1762795
+              },
+              {
+                "rank": 24,
+                "year": 1997,
+                "title": "Neon Genesis Evangelion: The End of Evangelion",
+                "director": "Hideaki Anno, Kazuya Tsurumaki",
+                "genre": "Science Fiction",
+                "language": "Japanese",
+                "runtime": 87,
+                "rating": 4.47,
+                "likes": 182644,
+                "fans": 23509,
+                "watches": 410632
+              },
+              {
+                "rank": 42,
+                "year": 1979,
+                "title": "Stalker",
+                "director": "Andrei Tarkovsky",
+                "genre": "Science Fiction",
+                "language": "Russian",
+                "runtime": 162,
+                "rating": 4.43,
+                "likes": 124680,
+                "fans": 15626,
+                "watches": 317362
+              }
+            ]
+        },
+        { 
+            "name": "thriller",
+            "children": [
+               {
+                "rank": 8,
+                "year": 2019,
+                "title": "Parasite",
+                "director": "Bong Joon-Ho",
+                "genre": "Thriller",
+                "language": "Korean",
+                "runtime": 133,
+                "rating": 4.56,
+                "likes": 2197414,
+                "fans": 90490,
+                "watches": 3844329
+              },
+              {
+                "rank": 32,
+                "year": 1964,
+                "title": "Woman in the Dunes",
+                "director": "Hiroshi Teshigahara",
+                "genre": "Thriller",
+                "language": "Japanese",
+                "runtime": 147,
+                "rating": 4.45,
+                "likes": 23319,
+                "fans": 1499,
+                "watches": 59797
+              },
+              {
+                "rank": 33,
+                "year": 1960,
+                "title": "Le Trou",
+                "director": "Jacques Becker",
+                "genre": "Thriller",
+                "language": "French",
+                "runtime": 132,
+                "rating": 4.45,
+                "likes": 12894,
+                "fans": 446,
+                "watches": 35383
+              },
+              {
+                "rank": 50,
+                "year": 2016,
+                "title": "The Handmaiden",
+                "director": "Park Chan-wook",
+                "genre": "Thriller",
+                "language": "Korean",
+                "runtime": 145,
+                "rating": 4.41,
+                "likes": 259509,
+                "fans": 30704,
+                "watches": 612266
+              }
+            ]
+        },
+        { 
+            "name": "war",
+            "children": [
+              {
+                "rank": 2,
+                "year": 1985,
+                "title": "Come and See",
+                "director": "Elem Klimov",
+                "genre": "War",
+                "language": "Russian",
+                "runtime": 142,
+                "rating": 4.64,
+                "likes": 130594,
+                "fans": 12122,
+                "watches": 314164
+              },
+              {
+                "rank": 7,
+                "year": 1961,
+                "title": "The Human Condition III: A Soldier's Prayer",
+                "director": "Masaki Kobayashi",
+                "genre": "War",
+                "language": "Japanese",
+                "runtime": 190,
+                "rating": 4.56,
+                "likes": 9070,
+                "fans": 548,
+                "watches": 21810
+              },
+              {
+                "rank": 13,
+                "year": 1993,
+                "title": "Schindler's List",
+                "director": "Steven Spielberg",
+                "genre": "War",
+                "language": "English",
+                "runtime": 195,
+                "rating": 4.52,
+                "likes": 383869,
+                "fans": 14850,
+                "watches": 1241193
+              },
+              {
+                "rank": 19,
+                "year": 1959,
+                "title": "The Human Condition I: No Greater Love",
+                "director": "Masaki Kobayashi",
+                "genre": "War",
+                "language": "Japanese",
+                "runtime": 206,
+                "rating": 4.5,
+                "likes": 11569,
+                "fans": 374,
+                "watches": 28810
+              },
+              {
+                "rank": 28,
+                "year": 1988,
+                "title": "Grave of the Fireflies",
+                "director": "Hayao Miyazaki",
+                "genre": "War",
+                "language": "Japanese",
+                "runtime": 89,
+                "rating": 4.45,
+                "likes": 241829,
+                "fans": 9527,
+                "watches": 657521
+              },
+              {
+                "rank": 31,
+                "year": 1957,
+                "title": "Paths of Glory",
+                "director": "Stanley Kubrick",
+                "genre": "War",
+                "language": "English",
+                "runtime": 88,
+                "rating": 4.45,
+                "likes": 88413,
+                "fans": 2080,
+                "watches": 250714
+              },
+              {
+                "rank": 34,
+                "year": 1979,
+                "title": "Apocalypse Now",
+                "director": "Francis Ford Coppola",
+                "genre": "War",
+                "language": "English",
+                "runtime": 147,
+                "rating": 4.44,
+                "likes": 291508,
+                "fans": 26425,
+                "watches": 851691
+              },
+              {
+                "rank": 47,
+                "year": 1959,
+                "title": "The Human Condition II: Road to Eternity",
+                "director": "Masaki Kobayashi",
+                "genre": "War",
+                "language": "Japanese",
+                "runtime": 178,
+                "rating": 4.41,
+                "likes": 8212,
+                "fans": 89,
+                "watches": 21809
+              }
+            ]
+        },
+        { 
+            "name": "western",
+            "children": [
+              {
+                "rank": 20,
+                "year": 1966,
+                "title": "The Good, the Bad and the Ugly",
+                "director": "Sergio Leone",
+                "genre": "Western",
+                "language": "Italian",
+                "runtime": 161,
+                "rating": 4.5,
+                "likes": 217068,
+                "fans": 19359,
+                "watches": 605431
+              }
+
+            ]
+        }
+    ]
+}
+
