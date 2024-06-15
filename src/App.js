@@ -6,6 +6,7 @@ import TreemapJson from './components/TreemapJson';
 function App() {
   return (
     <div className="App">
+      <h3>letterboxd top 50 movie browser</h3>
       <TreemapJson />
     </div>
   );
