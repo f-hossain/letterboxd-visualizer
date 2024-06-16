@@ -4,13 +4,15 @@ import top50 from '../top50.json'
 
 const TreemapJson = () => {
     const ref = useRef();
-    let [sizeParam, setSizeParam] = useState("rating")
+
+    let [sizeParam, setSizeParam] = useState("watches")
 
     useEffect( () => {
         draw();
     }, []);
 
     const draw = () => {
+
         // set the dimensions and margins of the graph
         var margin = {top: 10, right: 10, bottom: 10, left: 10},
         width = 1000 ,
@@ -28,12 +30,14 @@ const TreemapJson = () => {
 
 
         // Give the data to this cluster layout:
+        // Here the size of each leave is given in the 'value' field in input data
         var root = d3.hierarchy(top50).sum(function(d){ 
-            if (sizeParam == "fans") { return d.fans}
-            else if (sizeParam == "rating") { return d.rating}
-            else if (sizeParam == "watches") { return d.watches}
+            // TODO: write this better later
+            if (sizeParam === "fans") { return d.fans}
+            else if (sizeParam === "rating") { return d.rating}
+            else if (sizeParam === "watches") { return d.watches}
             else { return d.likes }
-        }).sort((a, b) => b.value - a.value) // Here the size of each leave is given in the 'value' field in input data
+        }).sort((a, b) => b.value - a.value) 
 
 
         // Then d3.treemap computes the position of each element of the hierarchy
@@ -45,7 +49,7 @@ const TreemapJson = () => {
         .range([ "#dadea4", "#fbe8b2", "#e8dbff", "#fff0f0", "#f2aba5", "#cabfc2", "#e6e2d6", "#8D91C7", "#B0DAF1", "#FFBF81"])
         
         // use this information to add rectangles:
-        svg
+        let nodes = svg
         .selectAll("rect")
         .data(root.leaves())
         .enter()
@@ -61,24 +65,92 @@ const TreemapJson = () => {
             .attr('ry', 5)
 
         svg.selectAll("text").data(root.leaves()).enter().append('text')
-            .attr('opacity', 0.9)
-            .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-            .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-            // only show text if the card is big enough to display it properly
-            .text(function(d){ 
+            .attr('opacity', function(d) {
                 const width = (d.x1) - (d.x0), height = (d.y1) - (d.y0);
-                const tooSmall = width < 75 || height < 25
-                const itemText = tooSmall ? "" : d.data.title
-                return itemText 
+                const tooSmall = width < 50 || height < 50
+                const opacity = tooSmall ? 0 : 0.9
+                return opacity
             })
-            .attr("font-size", "10px")
-            .attr("fill", "slate")
+            .attr("x", function(d){ 
+                console.log(d)
+                const width = d.x1 - d.x0, height = d.y1 - d.y0;
+                const gap_size = Math.max(Math.min(width/10, height/4, Math.sqrt((width*width + height*height))/10), 9) / 2
+                console.log(gap_size)
+                return d.x0 + gap_size // + gap size to adjust position (more right)
+            })    
+            .attr("y", function(d){ 
+                const width = d.x1 - d.x0, height = d.y1 - d.y0;
+                const gap_size = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9) * 1.5
+                console.log(gap_size)
+                return d.y0 + gap_size // + gap size to adjust position (lower)
+            })
+            // only show text if the card is big enough to display it properly
+            .text(function(d){ return d.data.title})
+            .attr("font-size", function(d) {
+                const width = d.x1 - d.x0, height = d.y1 - d.y0;
+                return Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
+            })
+            .attr("fill", "grey")
+            .call(wrapText)
+    }
+
+    const wrapText = (selection) => {
+        selection.each(function () {
+            const node = d3.select(this);
+            const nodeData = node.data()[0]
+            const width = nodeData.x1 - nodeData.x0
+            const height = nodeData.y1 - nodeData.y0
+            const lineLimit = width - 22
+
+
+            let word;
+            const words = node.text().split(' ').reverse();
+
+            let line = [];
+
+            const x = node.attr('x');
+            const y = node.attr('y');
+
+            let tspan = node.text('').append('tspan').attr('x', x).attr('y', y);
+            let lineNumber = 0;
+
+            while (words.length > 0) {
+              word = words.pop();
+              line.push(word);
+              tspan.text(line.join(' '));
+              const tspanLength = tspan.node().getComputedTextLength();
+
+              if (tspanLength > lineLimit && line.length !== 1) {
+                line.pop();
+                tspan.text(line.join(' '));
+                line = [word];
+                tspan = addTspan(word);
+              }
+            }
+
+            // words.pop()
+            
+            addTspan(words.pop());
         
+            function addTspan(text) {
+              let fontSizeLine = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
+              lineNumber += 1;
+              return (
+                node
+                  .append('tspan')
+                  .attr('x', x)
+                  .attr('y', y)
+                  .attr('dy', `${lineNumber * fontSizeLine}px`)
+                  .text(text)
+              );
+            }
+        });
+    
     }
 
 
     return (
-        <div class="svg-container" width="1000" height="2000" ref={ref}></div>
+        <div className="svg-container" width="1000" height="2000" ref={ref}></div>
     )
 
 };
