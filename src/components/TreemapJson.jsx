@@ -100,7 +100,10 @@ const TreemapJson = () => {
             const nodeData = node.data()[0]
             const width = nodeData.x1 - nodeData.x0
             const height = nodeData.y1 - nodeData.y0
-            const lineLimit = width - 22
+
+            let fontSizeLine = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
+
+            const lineLimit = width - fontSizeLine
 
 
             let word;
@@ -133,7 +136,6 @@ const TreemapJson = () => {
             addTspan(words.pop());
         
             function addTspan(text) {
-              let fontSizeLine = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
               lineNumber += 1;
               return (
                 node
