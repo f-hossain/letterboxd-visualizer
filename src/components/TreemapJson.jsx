@@ -5,7 +5,7 @@ import top50 from '../top50.json'
 const TreemapJson = () => {
     const ref = useRef();
 
-    let [sizeParam, setSizeParam] = useState("watches")
+    let [sizeParam, setSizeParam] = useState("fans")
 
     useEffect( () => {
         draw();
@@ -67,7 +67,7 @@ const TreemapJson = () => {
         svg.selectAll("text").data(root.leaves()).enter().append('text')
             .attr('opacity', function(d) {
                 const width = (d.x1) - (d.x0), height = (d.y1) - (d.y0);
-                const tooSmall = width < 50 || height < 50
+                const tooSmall = width < 60 || height < 50
                 const opacity = tooSmall ? 0 : 0.9
                 return opacity
             })
@@ -85,13 +85,23 @@ const TreemapJson = () => {
                 return d.y0 + gap_size // + gap size to adjust position (lower)
             })
             // only show text if the card is big enough to display it properly
-            .text(function(d){ return d.data.title})
+            .text(function(d){ return d.data.title + " " + d.data.year})
             .attr("font-size", function(d) {
                 const width = d.x1 - d.x0, height = d.y1 - d.y0;
-                return Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
+                return Math.max(Math.min(width/10, height/5, Math.sqrt((width*width + height*height))/10), 9)
             })
             .attr("fill", "grey")
             .call(wrapText)
+        
+        svg.selectAll("text").data(root.leaves()).enter().append('text')
+        .attr('opacity', function(d) {
+            const width = (d.x1) - (d.x0), height = (d.y1) - (d.y0);
+            const tooSmall = width < 60 || height < 50
+            const opacity = tooSmall ? 0 : 0.9
+            return opacity
+        })
+        .text(function(d){ return d.data.year})
+
     }
 
     const wrapText = (selection) => {
@@ -117,7 +127,7 @@ const TreemapJson = () => {
             let tspan = node.text('').append('tspan').attr('x', x).attr('y', y);
             let lineNumber = 0;
 
-            while (words.length > 0) {
+            while (words.length > 1) {
               word = words.pop();
               line.push(word);
               tspan.text(line.join(' '));
@@ -133,18 +143,36 @@ const TreemapJson = () => {
 
             // words.pop()
             
-            addTspan(words.pop());
+            addTspan(words.pop(), true);
         
-            function addTspan(text) {
+            function addTspan(text, year = false) {
               lineNumber += 1;
-              return (
-                node
-                  .append('tspan')
-                  .attr('x', x)
-                  .attr('y', y)
-                  .attr('dy', `${lineNumber * fontSizeLine}px`)
-                  .text(text)
-              );
+
+              if (year) {
+                return (
+                    node
+                      .append('tspan')
+                      .attr('x', x+5)
+                      .attr('y', y)
+                      .attr('dy', `${lineNumber * fontSizeLine}px`)
+                      .attr('font-size', function(d) { return fontSizeLine / 2})
+                    //   .attr('fill', 'red')
+                      .classed("year", true)
+                      .text(nodeData.data.director + ", " + text)
+                  );
+
+              } else {
+                return (
+                    node
+                      .append('tspan')
+                      .attr('x', x)
+                      .attr('y', y)
+                      .attr('dy', `${lineNumber * fontSizeLine}px`)
+                      .text(text)
+                  );
+
+              }
+              
             }
         });
     

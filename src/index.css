@@ -38,6 +38,13 @@ svg {
     max-width: 100%; 
 }
 
+.year {
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
+  /* font-weight: 00; */
+  font-style: italic;
+  /* fill: red; */
+}
+
 /* svg .rect {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
