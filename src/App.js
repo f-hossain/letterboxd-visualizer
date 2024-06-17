@@ -10,6 +10,7 @@ function App() {
       <p className="desc">{description}</p>
       {/* <Filters /> */}
       <TreemapJson />
+      <div className='desc'>{description}</div>
     </div>
   );
 }

@@ -4,6 +4,8 @@ import top50 from '../top50.json'
 
 const TreemapJson = () => {
     const ref = useRef();
+    const starFilled = "★"
+    const starOutlined = "☆"
 
     let [sizeParam, setSizeParam] = useState("fans")
 
@@ -12,31 +14,12 @@ const TreemapJson = () => {
     }, []);
 
     const draw = () => {
-        const mouseover = (event, d) => {
-            // console.log(d)
-            // let tooltip = d.select('div')
-            tooltip.style("opacity", 1);
-        };
-
-        const mouseleave = (event, d) => {
-            tooltip.style('opacity', 0);
-        }
-
-        const mousemove = (event, d) => {
-            // console.log(event)
-            // console.log(d)
-            const text = d3.select('.tooltip-area__text');
-            text.text(`Sales were ${d.data.title} in ${d.data.year}`);
-            const [x, y] = d3.pointer(event);
-    
-            tooltip
-            .attr('transform', `translate(${x}, ${y})`);
-        };
 
         // set the dimensions and margins of the graph
         var margin = {top: 10, right: 10, bottom: 10, left: 10},
         width = 1000 ,
         height = 1000 ;
+
 
         // append the svg object to the body of the page
         const svg = d3.select(ref.current)
@@ -47,6 +30,42 @@ const TreemapJson = () => {
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
+
+        // tooltip
+        const Tooltip = d3.select(ref.current).append("div")
+            .style("opacity", 0)
+            .attr("class", "tooltip")
+
+        // tooltip functions
+        var mouseover = function(d) {
+            Tooltip.transition()
+            .style("opacity", 1)
+        }
+
+        var mousemove = function(event, d) {
+            // const desc = d.data.description
+            const rating = Math.round(d.data.rating)
+            const ratingStr = starFilled.repeat(rating) + starOutlined.repeat(5-rating)
+
+            Tooltip
+            .html(`
+                <h3 className="tooltip-label">${d.data.title}</h3> 
+                <p><i> ${d.data.director}, ${d.data.year}</i></p>
+                <h2> ${ratingStr} </h2>
+                <p className="tooltip-label">
+                    ${d.data.likes} likes <br>
+                    ${d.data.fans} fans <br>
+                    ${d.data.watches} watches
+                </p>
+            `)
+            .style("top", (event.pageY - 205)+"px")
+            .style("left",(event.pageX + 15)+"px")
+        }
+
+        var mouseleave = function(d) {
+            Tooltip.transition()
+            .style("opacity", 0)
+        }
 
 
         // Give the data to this cluster layout:
@@ -86,20 +105,7 @@ const TreemapJson = () => {
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
             .on("mouseover", mouseover)
-            .append("div")
-                .attr("opacity", 0)
-                .text("test")
-            // .on("mouseover", function(d, i) {
-            //     console.log(d.data())
-            //     tooltip.html("Name: + d.data.genre  + d.data.year")
-            //     // .attr("data-name", d.data.title)
-            //     // .attr("data-category", d.data.genre)
-            //     // .attr("data-value", d.data.year)
-            //     .style("opacity", 0.9);
-            //   })
-            //   .on("mouseout", function(d,i){
-            //     tooltip.style("opacity", 0);
-            //   })
+        
 
         svg.selectAll("text").data(root.leaves()).enter().append('text')
             .attr('opacity', function(d) {
@@ -129,6 +135,9 @@ const TreemapJson = () => {
             })
             .attr("fill", "grey")
             .call(wrapText)
+            .on("mousemove", mousemove)
+            .on("mouseleave", mouseleave)
+            .on("mouseover", mouseover)
         
         svg.selectAll("text").data(root.leaves()).enter().append('text')
         .attr('opacity', function(d) {
@@ -138,14 +147,6 @@ const TreemapJson = () => {
             return opacity
         })
         .text(function(d){ return d.data.year})
-
-        // TOOLTIP FUNCTIONS
-        var tooltip = d3.selectAll(nodes).append("div")
-        .attr("class", "tooltip")
-        .attr("id", "tooltip")
-        .style("background", "Beige")
-        .style("color", "Black")
-        .style("opacity", 0);	//Hide until mouseover
 
     }
 
