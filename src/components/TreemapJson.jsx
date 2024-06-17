@@ -12,6 +12,26 @@ const TreemapJson = () => {
     }, []);
 
     const draw = () => {
+        const mouseover = (event, d) => {
+            // console.log(d)
+            // let tooltip = d.select('div')
+            tooltip.style("opacity", 1);
+        };
+
+        const mouseleave = (event, d) => {
+            tooltip.style('opacity', 0);
+        }
+
+        const mousemove = (event, d) => {
+            // console.log(event)
+            // console.log(d)
+            const text = d3.select('.tooltip-area__text');
+            text.text(`Sales were ${d.data.title} in ${d.data.year}`);
+            const [x, y] = d3.pointer(event);
+    
+            tooltip
+            .attr('transform', `translate(${x}, ${y})`);
+        };
 
         // set the dimensions and margins of the graph
         var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -60,9 +80,26 @@ const TreemapJson = () => {
             .attr('height', function (d) { return d.y1 - d.y0; })
             // .style("stroke", "black")
             .style("fill", function(d){ return color(d.parent.data.name)} )
-            .attr('opacity', 0.7)
+            .attr('opacity', 0.8)
             .attr('rx', 5)
             .attr('ry', 5)
+            .on("mousemove", mousemove)
+            .on("mouseleave", mouseleave)
+            .on("mouseover", mouseover)
+            .append("div")
+                .attr("opacity", 0)
+                .text("test")
+            // .on("mouseover", function(d, i) {
+            //     console.log(d.data())
+            //     tooltip.html("Name: + d.data.genre  + d.data.year")
+            //     // .attr("data-name", d.data.title)
+            //     // .attr("data-category", d.data.genre)
+            //     // .attr("data-value", d.data.year)
+            //     .style("opacity", 0.9);
+            //   })
+            //   .on("mouseout", function(d,i){
+            //     tooltip.style("opacity", 0);
+            //   })
 
         svg.selectAll("text").data(root.leaves()).enter().append('text')
             .attr('opacity', function(d) {
@@ -101,6 +138,14 @@ const TreemapJson = () => {
             return opacity
         })
         .text(function(d){ return d.data.year})
+
+        // TOOLTIP FUNCTIONS
+        var tooltip = d3.selectAll(nodes).append("div")
+        .attr("class", "tooltip")
+        .attr("id", "tooltip")
+        .style("background", "Beige")
+        .style("color", "Black")
+        .style("opacity", 0);	//Hide until mouseover
 
     }
 
@@ -180,7 +225,11 @@ const TreemapJson = () => {
 
 
     return (
-        <div className="svg-container" width="1000" height="2000" ref={ref}></div>
+        <div className="svg-container" width="1000" height="2000" ref={ref}>
+            {/* <g className="tooltip-area">
+                <text className="tooltip-area__text"></text>
+            </g> */}
+        </div>
     )
 
 };
