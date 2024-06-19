@@ -11,7 +11,7 @@
 
 
 body {
-  margin: 0;
+  margin: 25px;
   background: rgb(245	,244,	238);
   font-family: 'Bitter';
   /* font-family: "Manrope"; --- use this for buttons? */
@@ -50,9 +50,28 @@ h2 {
 
 .desc {
   padding: 1.5em;
-  font-size: 14px;
+  /* margin-bottom: 2em;?? */
+  margin: 3em 20px 3em 20px;
+  font-size: 10px;
   text-align: justify;
   color: #30292F;
+  /* background: white; */
+  font-family: "Menlo";
+  border-style: dotted;
+  border-width: 3px;
+  border-color: slate;
+  /* padding: 1em; */
+}
+
+.footer {
+  margin: 20px;
+  color: #30292F;
+  font-size: 12px;
+  font-family: "Menlo";
+}
+
+a {
+  text-decoration: none; 
 }
 
 .svg-container {
@@ -97,12 +116,186 @@ svg::selection {
   max-width: 300px;
 }
 
-a {
-  font-size: 14px;
-  color: #30292F;
-  text-decoration: none; 
+.filter-inputs {
+  padding: 0 20px;
+  display: flex;
+  font-family: 'Manrope';
+  font-size: 12px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
-.footer {
-  padding: 1em;
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.select-container {
+  display: flex;
+  gap: 2px;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2px;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+label {
+  /* font-family: 'Bitter'; */
+  /* font-size: '10px'; */
+  text-align: left;
+}
+
+select {
+  padding: 5px 10px 5px 8px;
+  border-radius: 25px;
+  /* border: 2px solid; */
+  background-color: white;
+  font-size: 10px;
+  /* font-weight: 600; */
+  text-align: center;
+  margin-right: 10px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 2px solid;
+  background-color: white;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.action {
+  border-color: #dadea4;
+  color: #dadea4;
+  transition: all 0.4s;
+}
+
+.action.btn-selected {
+  background: #dadea4;
+  color: white;
+  transition: all 0.4s;
+}
+
+.crime {
+  border-color: #fbe8b2;
+  color: #fbe8b2;
+  transition: all 0.4s;
+}
+
+.crime.btn-selected {
+  background: #fbe8b2;
+  color: white;
+  transition: all 0.4s;
+}
+
+.drama {
+  border-color: #e8dbff;
+  color: #e8dbff;
+  transition: all 0.4s;
+}
+
+.drama.btn-selected {
+  background: #e8dbff;
+  color: white;
+  transition: all 0.4s;
+}
+
+.fantasy {
+  border-color: #fff0f0;
+  color: #fff0f0;
+  transition: all 0.4s;
+}
+
+.fantasy.btn-selected {
+  background: #fff0f0;
+  color: white;
+  transition: all 0.4s;
+}
+
+.history {
+  border-color: #f2aba5;
+  color: #f2aba5;
+  transition: all 0.4s;
+}
+
+.history.btn-selected {
+  background: #f2aba5;
+  color: white;
+  transition: all 0.4s;
+}
+
+.romance {
+  border-color: #cabfc2;
+  color: #cabfc2;
+  transition: all 0.4s;
+}
+
+.romance.btn-selected {
+  background: #cabfc2;
+  color: white;
+  transition: all 0.4s;
+}
+
+.science-fiction {
+  border-color: #e6e2d6;
+  color: #e6e2d6;
+  transition: all 0.4s;
+}
+
+.science-fiction.btn-selected {
+  background: #e6e2d6;
+  color: white;
+  transition: all 0.4s;
+}
+
+.thriller {
+  border-color: #8D91C7;
+  color: #8D91C7;
+  transition: all 0.4s;
+}
+
+.thriller.btn-selected {
+  background: #8D91C7;
+  color: white;
+  transition: all 0.4s;
+}
+
+.war {
+  border-color: #B0DAF1;
+  color: #B0DAF1;
+  transition: all 0.4s;
+}
+
+.war.btn-selected {
+  background: #B0DAF1;
+  color: white;
+  transition: all 0.4s;
+}
+
+.western {
+  border-color: #FFBF81;
+  color: #FFBF81;
+  transition: all 0.4s;
+}
+
+.western.btn-selected {
+  background: #FFBF81;
+  color: white;
+  transition: all 0.4s;
 }
