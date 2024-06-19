@@ -13,28 +13,37 @@
 body {
   margin: 0;
   background: rgb(245	,244,	238);
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   font-family: 'Bitter';
   /* font-family: "Manrope"; --- use this for buttons? */
-  /* font-family: "Arsenal";  */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  /* background: #FACFAD; */
+  background: #f2aba5;
+  /* background: #e8dbff; */
+  color: white;
+}
+
+h1::selection {
+  background: #f2aba5;
+  color: #30292F;
+  /* color: rgb(245	,244,	238); */
+  text-shadow: 4px 4px rgb(245	,244,	238);
+}
+
 h1 {
-  /* font-family: 'Playfair Display'; */
   font-family: 'Abril Fatface';
   font-style: italic;
-  text-shadow: 3px 3px #e8dbff;
+  text-shadow: 3px 3px #fbc4ab;
   font-size: 45px;
-  /* font-weight: 800; */
+  color: #30292F;
 
 }
 
 h2 {
-  text-shadow: 3px 3px #e8dbff;
+  text-shadow: 2px 2px #f2aba5;
   padding: 0;
   margin: 0;
 }
@@ -43,11 +52,7 @@ h2 {
   padding: 1.5em;
   font-size: 14px;
   text-align: justify;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  color: #30292F;
 }
 
 .svg-container {
@@ -66,45 +71,38 @@ code {
 }
 
 svg {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
     font-family: 'Poppins';
     font-weight: 800;
     max-width: 100%; 
 }
 
-.year {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
-  /* font-weight: 00; */
-  font-style: italic;
-  /* fill: red; */
+svg::selection {
+  background: white;
 }
 
-/* svg .rect {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+.year {
+  font-style: italic;
+}
 
 .tooltip{
   text-align: left;
   position: absolute;
-  /* position: relative; */
   font-size: 15px;
   font-family: "Menlo";
   background-color: rgb(245	,244,	238);
   border-style: dotted;
   border-width: 3px;
   border-color: slate;
-  /* border-radius: 5px; */
   padding: 1em;
   max-width: 300px;
 }
 
-.tooltip-label {
-  color: red;
+a {
+  font-size: 14px;
+  color: #30292F;
+  text-decoration: none; 
 }
 
 .footer {
-  padding: 10px;
-  height: 100px;
+  padding: 1em;
 }

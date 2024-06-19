@@ -10,7 +10,7 @@ function App() {
       <p className="desc">{description}</p>
       {/* <Filters /> */}
       <TreemapJson />
-      <div className='desc'>{description}</div>
+      <div className='footer'><a href="https://farihahossain.ca/">© Fariha Hossain, 2024</a></div>
     </div>
   );
 }

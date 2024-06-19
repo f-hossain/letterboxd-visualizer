@@ -1,19 +1,76 @@
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
-import top50 from '../top50.json'
+import top50 from '../top50.json';
 
-const TreemapJson = () => {
+function TreemapJson() {
     const ref = useRef();
     const starFilled = "★"
     const starOutlined = "☆"
 
-    let [sizeParam, setSizeParam] = useState("fans")
+    // ==================================================
+    //                     FILTERS
+    // ==================================================
+
+    let [data, setData] = useState(top50)
+    let [size, setSize] = useState("rating")
+    // let allFilters = top50.children.map( genre => {return genre.name})
+
+    // console.log(allFilters)
+    let [activeFilters, setActiveFilters] = useState([])
+
+    let changeSize = (event) => {
+        console.log('changing size')
+        console.log(event.target.value)
+        setSize(event.target.value)
+    }
+
+    let updateGenreFilter = (event) => {
+        const element = event.currentTarget
+        const genreName = element.getAttribute("data-value")
+        const hasSelectedClass = element.classList.contains("btn-selected")
+        const isActive = activeFilters.includes(genreName)
+
+
+        if (hasSelectedClass || isActive) {
+            let i = activeFilters.findIndex( filter => { return filter == genreName })
+            activeFilters.splice(i, 1)
+
+            if (activeFilters.length > 0) {
+                let filteredData = top50.children.filter( genre => activeFilters.includes(genre.name))
+                let newData = { "children": filteredData}
+                setData(newData)
+            } else {
+                setData(top50)
+            }
+
+            setActiveFilters(activeFilters)
+            element.classList.remove("btn-selected")
+        } else {
+            // let filteredData = top50.children.filter( genre => genre.name.includes(genreName))
+            // let newData = { "children": filteredData}
+            // setData(newData)
+            let newFilter = [...activeFilters, genreName]
+
+            let filteredData = top50.children.filter( genre => newFilter.includes(genre.name))
+            let newData = { "children": filteredData}
+
+            setData(newData)
+            setActiveFilters(newFilter)
+            element.classList.add("btn-selected")
+        }
+    }
+
+    // ==================================================
 
     useEffect( () => {
         draw();
-    }, []);
+    }, [data, size]);
 
+    // ==================================================
+    //                    TREEMAP
+    // ==================================================
     const draw = () => {
+        d3.select("svg > *").remove()
 
         // set the dimensions and margins of the graph
         var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -31,7 +88,9 @@ const TreemapJson = () => {
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-        // tooltip
+        // ==================================================
+        //                    TOOLTIP
+        // ==================================================
         const Tooltip = d3.select(ref.current).append("div")
             .style("opacity", 0)
             .attr("class", "tooltip")
@@ -68,13 +127,16 @@ const TreemapJson = () => {
         }
 
 
+        // ==================================================
+        //                    DATA
+        // ==================================================
         // Give the data to this cluster layout:
         // Here the size of each leave is given in the 'value' field in input data
-        var root = d3.hierarchy(top50).sum(function(d){ 
+        var root = d3.hierarchy(data).sum(function(d){ 
             // TODO: write this better later
-            if (sizeParam === "fans") { return d.fans}
-            else if (sizeParam === "rating") { return d.rating}
-            else if (sizeParam === "watches") { return d.watches}
+            if (size === "fans") { return d.fans}
+            else if (size === "rating") { return d.rating}
+            else if (size === "watches") { return d.watches}
             else { return d.likes }
         }).sort((a, b) => b.value - a.value) 
 
@@ -99,7 +161,7 @@ const TreemapJson = () => {
             .attr('height', function (d) { return d.y1 - d.y0; })
             // .style("stroke", "black")
             .style("fill", function(d){ return color(d.parent.data.name)} )
-            .attr('opacity', 0.8)
+            .attr('opacity', 0.9)
             .attr('rx', 5)
             .attr('ry', 5)
             .on("mousemove", mousemove)
@@ -114,17 +176,14 @@ const TreemapJson = () => {
                 const opacity = tooSmall ? 0 : 0.9
                 return opacity
             })
-            .attr("x", function(d){ 
-                console.log(d)
+            .attr("x", function(d){
                 const width = d.x1 - d.x0, height = d.y1 - d.y0;
                 const gap_size = Math.max(Math.min(width/10, height/4, Math.sqrt((width*width + height*height))/10), 9) / 2
-                console.log(gap_size)
                 return d.x0 + gap_size // + gap size to adjust position (more right)
             })    
             .attr("y", function(d){ 
                 const width = d.x1 - d.x0, height = d.y1 - d.y0;
                 const gap_size = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9) * 1.5
-                console.log(gap_size)
                 return d.y0 + gap_size // + gap size to adjust position (lower)
             })
             // only show text if the card is big enough to display it properly
@@ -150,6 +209,9 @@ const TreemapJson = () => {
 
     }
 
+    // ==================================================
+    //               FORMAT TILE TEXT
+    // ==================================================
     const wrapText = (selection) => {
         selection.each(function () {
             const node = d3.select(this);
@@ -226,10 +288,30 @@ const TreemapJson = () => {
 
 
     return (
-        <div className="svg-container" width="1000" height="2000" ref={ref}>
-            {/* <g className="tooltip-area">
-                <text className="tooltip-area__text"></text>
-            </g> */}
+        <div>
+            <div className="filter-inputs">
+                <label>calculate by: </label>
+                <select value={size} onChange={changeSize} >
+                    <option value="rating">rating</option>
+                    <option value="likes">likes</option>
+                    <option value="fans">fans</option>
+                    <option value="watches">watches</option>
+                </select>
+                <label> genres: </label>
+                <div className="genres">
+                    <button data-value="action" onClick={updateGenreFilter}>action</button>
+                    <button data-value="crime" onClick={updateGenreFilter}>crime</button>
+                    <button data-value="drama" onClick={updateGenreFilter}>drama</button>
+                    <button data-value="fantasy" onClick={updateGenreFilter}>fantasy</button>
+                    <button data-value="history" onClick={updateGenreFilter}>history</button>
+                    <button data-value="romance" onClick={updateGenreFilter}>romance</button>
+                    <button data-value="science fiction" onClick={updateGenreFilter}>science fiction</button>
+                    <button data-value="thriller" onClick={updateGenreFilter}>thriller</button>
+                    <button data-value="war" onClick={updateGenreFilter}>war</button>
+                    <button data-value="western" onClick={updateGenreFilter}>western</button>
+                </div>
+            </div>
+            <div className="svg-container" width="1000" ref={ref}></div>
         </div>
     )
 
