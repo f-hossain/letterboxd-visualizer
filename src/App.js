@@ -13,9 +13,6 @@ function App() {
         <p>
           Below, we can see films grouped by genre, and their tile sizes and overall node values can be compared against their average rating, the number of likes the film has received on Letterboxd, the amount of ‘fans’ a film has on the platform (determined by the amount of users who have ‘favourited’ the film), and the number of watches a film has amassed in total by letterboxd users. In effect, this treemap will be able to show you the top performing films by each metric, as well as simultaneously displaying the top performing genres. 
         </p>
-        {/* <p>
-          For more information of the film selection, please visit the <a href="https://letterboxd.com/dave/list/official-top-250-narrative-feature-films/">Official Top 250 Narrative Feature Films</a> on Letterboxd!
-        </p> */}
       </div>
       <TreemapJson />
       <div className='footer'><a href="https://farihahossain.ca/">© Fariha Hossain 2024</a></div>
