@@ -51,8 +51,8 @@ h2 {
 .desc {
   padding: 1.5em;
   /* margin-bottom: 2em;?? */
-  margin: 3em 20px 3em 20px;
-  font-size: 10px;
+  margin: 3em 20px 4em 20px;
+  font-size: 12px;
   text-align: justify;
   color: #30292F;
   /* background: white; */
@@ -119,7 +119,8 @@ svg::selection {
 .filter-inputs {
   padding: 0 20px;
   display: flex;
-  font-family: 'Manrope';
+  /* font-family: 'Manrope'; */
+  font-family: "Manrope";
   font-size: 12px;
   align-items: baseline;
   justify-content: center;
@@ -132,7 +133,7 @@ svg::selection {
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: baseline;
-  gap: 3px;
+  gap: 8px;
 }
 
 .select-container {
@@ -158,12 +159,14 @@ label {
 }
 
 select {
-  padding: 5px 10px 5px 8px;
-  border-radius: 25px;
-  /* border: 2px solid; */
-  background-color: white;
+  font-family: "Menlo";
+  font-weight: 600;
+  color: slate;
+  padding: 4px 10px 4px 8px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(245	,244,	238);
   font-size: 10px;
-  /* font-weight: 600; */
   text-align: center;
   margin-right: 10px;
 
@@ -171,133 +174,156 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
+  border-color: grey;
 }
 
 button {
+  font-family: "Menlo";
   padding: 5px 10px;
-  border-radius: 25px;
-  border: 2px solid;
-  background-color: white;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: rgb(245	,244,	238);
   font-size: 10px;
   font-weight: 600;
+  color: slate;
 }
 
 .action {
-  border-color: #dadea4;
-  color: #dadea4;
+  border-color: #b6be4d;
+  /* color: #dadea4; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #b6be4d;
 }
 
 .action.btn-selected {
-  background: #dadea4;
+  background: #b6be4d;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #b6be4d;
 }
 
 .crime {
-  border-color: #fbe8b2;
-  color: #fbe8b2;
+  border-color: #f5c643;
+  /* color: #fbe8b2; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #f5c643;
 }
 
 .crime.btn-selected {
-  background: #fbe8b2;
+  background: #f5c643;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .drama {
-  border-color: #e8dbff;
-  color: #e8dbff;
+  border-color: #ba93ff;
+  /* color: #e8dbff; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #ba93ff;
 }
 
 .drama.btn-selected {
   background: #e8dbff;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .fantasy {
-  border-color: #fff0f0;
-  color: #fff0f0;
+  border-color: #1f78c9;
+  /* color: #fff0f0; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #1f78c9;
 }
 
 .fantasy.btn-selected {
-  background: #fff0f0;
+  background: #1f78c9;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .history {
   border-color: #f2aba5;
-  color: #f2aba5;
+  /* color: #f2aba5; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #f2aba5;
 }
 
 .history.btn-selected {
   background: #f2aba5;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .romance {
   border-color: #cabfc2;
-  color: #cabfc2;
+  /* color: #cabfc2; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #cabfc2;
 }
 
 .romance.btn-selected {
   background: #cabfc2;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .science-fiction {
-  border-color: #e6e2d6;
-  color: #e6e2d6;
+  border-color: #C97D60;
+  /* color: #e6e2d6; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #C97D60;
 }
 
 .science-fiction.btn-selected {
-  background: #e6e2d6;
+  background: #C97D60;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .thriller {
   border-color: #8D91C7;
-  color: #8D91C7;
+  /* color: #8D91C7; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #8D91C7;
 }
 
 .thriller.btn-selected {
   background: #8D91C7;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .war {
-  border-color: #B0DAF1;
-  color: #B0DAF1;
+  border-color: #7ac0e7;
+  /* color: #B0DAF1; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #7ac0e7;
 }
 
 .war.btn-selected {
-  background: #B0DAF1;
+  background: #7ac0e7;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }
 
 .western {
   border-color: #FFBF81;
-  color: #FFBF81;
+  /* color: #FFBF81; */
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #FFBF81;
 }
 
 .western.btn-selected {
   background: #FFBF81;
   color: white;
   transition: all 0.4s;
+  box-shadow: 2px 2px 0px 0px #DADEA4;
 }

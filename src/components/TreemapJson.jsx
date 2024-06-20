@@ -112,8 +112,8 @@ function TreemapJson() {
                     ${d.data.watches} watches
                 </p>
             `)
-            .style("top", (event.pageY - 205)+"px")
-            .style("left",(event.pageX + 15)+"px")
+            .style("top", (event.pageY - 500)+"px")
+            .style("left",(event.pageX + 5)+"px")
         }
 
         var mouseleave = function(d) {
@@ -140,7 +140,7 @@ function TreemapJson() {
           // prepare a color scale
         var color = d3.scaleOrdinal()
         .domain(["action", "crime", "drama", "fantasy", "history", "romance", "science fiction", "thriller", "war", "western"])
-        .range([ "#dadea4", "#fbe8b2", "#e8dbff", "#fff0f0", "#f2aba5", "#cabfc2", "#e6e2d6", "#8D91C7", "#B0DAF1", "#FFBF81"])
+        .range([ "#dadea4", "#fbe8b2", "#e8dbff", "#74b1e9", "#f2aba5", "#cabfc2", "#e39c81", "#8D91C7", "#B0DAF1", "#FFBF81"])
         
         // use this information to add rectangles:
         let nodes = svg
@@ -184,7 +184,7 @@ function TreemapJson() {
             const width = d.x1 - d.x0, height = d.y1 - d.y0;
             return Math.max(Math.min(width/10, height/5, Math.sqrt((width*width + height*height))/10), 9)
         })
-        .attr("fill", "grey")
+        .attr("fill", "#7f6c7c")
         .call(wrapText)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
