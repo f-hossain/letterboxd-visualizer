@@ -147,6 +147,8 @@ svg::selection {
   gap: 2px;
   align-items: baseline;
   align-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 label {
