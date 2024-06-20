@@ -72,6 +72,7 @@ h2 {
 
 a {
   text-decoration: none; 
+  color: #7f6c7c;
 }
 
 .svg-container {
@@ -199,7 +200,7 @@ button {
   background: #b6be4d;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #b6be4d;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .crime {
@@ -213,7 +214,7 @@ button {
   background: #f5c643;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .drama {
@@ -224,10 +225,10 @@ button {
 }
 
 .drama.btn-selected {
-  background: #e8dbff;
+  background: #ba93ff;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .fantasy {
@@ -241,7 +242,7 @@ button {
   background: #1f78c9;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .history {
@@ -255,7 +256,7 @@ button {
   background: #f2aba5;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .romance {
@@ -269,7 +270,7 @@ button {
   background: #cabfc2;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .science-fiction {
@@ -283,7 +284,7 @@ button {
   background: #C97D60;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .thriller {
@@ -297,7 +298,7 @@ button {
   background: #8D91C7;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .war {
@@ -311,7 +312,7 @@ button {
   background: #7ac0e7;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }
 
 .western {
@@ -325,5 +326,5 @@ button {
   background: #FFBF81;
   color: white;
   transition: all 0.4s;
-  box-shadow: 2px 2px 0px 0px #DADEA4;
+  box-shadow: 2px 2px 0px 0px lightgrey;
 }

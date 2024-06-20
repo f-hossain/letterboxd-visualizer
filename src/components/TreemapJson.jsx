@@ -202,7 +202,7 @@ function TreemapJson() {
             const height = nodeData.y1 - nodeData.y0
 
             let fontSizeLine = Math.max(Math.min(width/12, height/4, Math.sqrt((width*width + height*height))/10), 9)
-            const lineLimit = width - fontSizeLine
+            const lineLimit = width - fontSizeLine - 20
 
             let word;
             const words = node.text().split(' ').reverse();
